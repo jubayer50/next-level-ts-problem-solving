@@ -1,4 +1,4 @@
-const multiplyValue = (value: number, multiplier?: number) => {
+const multiplyValue = (value: number, multiplier?: number): number => {
   if (value && multiplier) {
     return value * multiplier;
   }
@@ -23,10 +23,17 @@ const processInput = (value: string | number | boolean) => {
 };
 
 // -------------------------------------------------------------------------------------
-const formatCoordinate = (coordinate: readonly [number, number, string]) => {
+const formatCoordinate = (
+  coordinate: readonly [number, number, string],
+): string => {
   const [latitude, longitude, locationName] = coordinate;
 
   return `Location: ${locationName} (${latitude}, ${longitude})`;
 };
 
-console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+// --------------------------------------------------------------------------------------------
+const concatenateArrays = <T>(...arrays: T[][]): T[] => {
+  return arrays.flat();
+};
+
+// -------------------------------------------------------------------------------------
