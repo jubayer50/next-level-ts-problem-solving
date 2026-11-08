@@ -17,9 +17,16 @@ const processInput = (value: string | number | boolean) => {
   }
 
   if (typeof value === "boolean" && value === true) {
-    return '"Active"';
+    return "Active";
   }
-  return '"Inactive"';
+  return "Inactive";
 };
 
 // -------------------------------------------------------------------------------------
+const formatCoordinate = (coordinate: readonly [number, number, string]) => {
+  const [latitude, longitude, locationName] = coordinate;
+
+  return `Location: ${locationName} (${latitude}, ${longitude})`;
+};
+
+console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
