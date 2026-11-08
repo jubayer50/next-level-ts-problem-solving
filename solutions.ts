@@ -6,7 +6,6 @@ const multiplyValue = (value: number, multiplier?: number): number => {
   return value * 2;
 };
 
-// -----------------------------------------------------------------------------------
 const processInput = (value: string | number | boolean) => {
   if (typeof value === "string") {
     return value.trim().toLowerCase();
@@ -22,7 +21,6 @@ const processInput = (value: string | number | boolean) => {
   return "Inactive";
 };
 
-// -------------------------------------------------------------------------------------
 const formatCoordinate = (
   coordinate: readonly [number, number, string],
 ): string => {
@@ -31,12 +29,10 @@ const formatCoordinate = (
   return `Location: ${locationName} (${latitude}, ${longitude})`;
 };
 
-// --------------------------------------------------------------------------------------------
 const concatenateArrays = <T>(...arrays: T[][]): T[] => {
   return arrays.flat();
 };
 
-// -------------------------------------------------------------------------------------
 interface Course {
   title: string;
   students: number;
@@ -52,12 +48,10 @@ const getPopularCourses = (
   );
 };
 
-// --------------------------------------------------------------------------------------
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((item) => item[key]);
 };
 
-// -------------------------------------------------------------------------------------
 class Employee {
   protected name: string;
   private baseSalary: number;
@@ -85,7 +79,6 @@ class Manager extends Employee {
   }
 }
 
-// ---------------------------------------------------------------------
 const validateAgeAsync = (age: number): Promise<string> => {
   return new Promise((resolve, rejected) => {
     if (age >= 18) {
